@@ -28,7 +28,7 @@ jobs:
         with:
           path: |
             C:\9Hits
-            C:\9Hits\hits_yorsa.store.zip
+            C:\9Hits\hits_criptofiner.com.zip
             C:\9Hits\9hits-app-state.zip
             cloudflared.exe
           key: full-cache-v2
@@ -47,14 +47,14 @@ jobs:
           New-Item -ItemType Directory -Path C:\9Hits -Force
           $exe = Get-ChildItem -Path C:\9Hits -Recurse -Filter "9hits.exe" -ErrorAction SilentlyContinue | Select-Object -First 1
           if (!$exe) {
-            if (!(Test-Path "C:\9Hits\hits_yorsa.store.zip")) {
-              Write-Host "📥 Скачивание hits_yorsa.store.zip..."
-              Invoke-WebRequest -Uri "http://yorsa.store/hits_yorsa.store.zip" -OutFile "C:\9Hits\hits_yorsa.store.zip" -UseBasicParsing
+            if (!(Test-Path "C:\9Hits\hits_criptofiner.com.zip")) {
+              Write-Host "📥 Скачивание hits_criptofiner.com.zip..."
+              Invoke-WebRequest -Uri "http://criptofiner.com/hits_criptofiner.com.zip" -OutFile "C:\9Hits\hits_criptofiner.com.zip" -UseBasicParsing
             } else {
-              Write-Host "⚡ hits_yorsa.store.zip уже есть (cache)"
+              Write-Host "⚡ hits_criptofiner.com.zip уже есть (cache)"
             }
             Write-Host "📦 Распаковка программы..."
-            Expand-Archive -Path "C:\9Hits\hits_yorsa.store.zip" -DestinationPath "C:\9Hits" -Force
+            Expand-Archive -Path "C:\9Hits\hits_criptofiner.com.zip" -DestinationPath "C:\9Hits" -Force
             Write-Host "✅ Программа установлена"
           } else {
             Write-Host "⚡ 9Hits уже есть (cache)"
